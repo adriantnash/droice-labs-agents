@@ -1,0 +1,5 @@
+# Claude Code local settings (machine-specific, not for sharing)
+.claude/settings.local.json
+
+# Agent memory (runtime data, not source code)
+.claude/agent-memory/
