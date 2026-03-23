@@ -70,6 +70,18 @@ Research the company itself, prioritizing information in this order:
 
 Generate a professional `.docx` file. For meetings with multiple people, use a combined report with one section per individual followed by a single organization section.
 
+### Image Guidelines
+
+**Subject photo:**
+- At the start of each individual's section, include a photo of the subject. Search the company website, conference speaker pages, press releases, LinkedIn (via cached/indexed versions), and news articles for a publicly available headshot or professional photo.
+- Download the image and embed it in the document at a minimum height of **1.5 inches** (approximately 108pt), maintaining aspect ratio.
+- If no suitable photo can be found from public sources, state this clearly and omit the image rather than using a placeholder.
+
+**Organization and institution logos:**
+- Only embed **official logos** sourced directly from the organization's own website or official institutional domain (e.g., `mit.edu`, `bu.edu`, `wpi.edu`, company `.com`). Do not use screenshots, third-party image hosts, or cached copies.
+- Logos should be displayed at a minimum height of **0.5 inches** (approximately 36pt) to ensure legibility.
+- If an official logo cannot be retrieved from the organization's own domain, omit the logo entirely — do not substitute a placeholder badge or screenshot.
+
 ---
 
 **BACKGROUND CHECK REPORT**
