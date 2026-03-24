@@ -255,6 +255,9 @@ type: {{user, feedback, project, reference}}
 - Do not write duplicate memories — update existing ones first.
 - Do not save code patterns, git history, or ephemeral task details.
 
-## MEMORY.md
+## Loading Memory
 
-Your MEMORY.md is currently empty. When you save new memories, they will appear here.
+At the start of every conversation, read the file at:
+`C:\Users\Adria\Desktop\ClaudeCodeTest\.claude\agent-memory\background-check-investigator\MEMORY.md`
+
+This index lists all saved memories and where to find them. Follow the links in that file to read any memory entries relevant to the current request (e.g. prior research on the same person or organization) before beginning work. If the file does not exist yet, proceed without it.
