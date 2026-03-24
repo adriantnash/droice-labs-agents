@@ -72,10 +72,11 @@ Generate a professional `.docx` file. For meetings with multiple people, use a c
 
 ### Image Guidelines
 
-**Subject photo:**
-- At the start of each individual's section, include a photo of the subject. Search the company website, conference speaker pages, press releases, LinkedIn (via cached/indexed versions), and news articles for a publicly available headshot or professional photo.
+**Subject photo (required for every individual):**
+- Every individual section must begin with a photo of the subject. This is a required element of every report.
+- Search the company website, conference speaker pages, press releases, LinkedIn (via cached/indexed versions), news articles, and academic/institutional profile pages for a publicly available headshot or professional photo.
 - Download the image and embed it in the document at a minimum height of **1.5 inches** (approximately 108pt), maintaining aspect ratio.
-- If no suitable photo can be found from public sources, state this clearly and omit the image rather than using a placeholder.
+- If no suitable photo can be found from public sources after exhausting all available sources, state this clearly in the Researcher Notes section and omit the image rather than using a placeholder.
 
 **Organization and institution logos:**
 - Only embed **official logos** sourced directly from the organization's own website or official institutional domain (e.g., `mit.edu`, `bu.edu`, `wpi.edu`, company `.com`). Do not use screenshots, third-party image hosts, or cached copies.
@@ -93,12 +94,12 @@ Generate a professional `.docx` file. For meetings with multiple people, use a c
 ### [Full Name] — [Job Title], [Company]
 
 #### Professional Summary
-A 3–5 paragraph narrative that reads like a well-developed LinkedIn "About" section. Cover:
+A **1–2 paragraph** narrative written in third person, professional and neutral tone. Cover only factual information about the individual:
 - Current role and scope of responsibility
 - Career arc and areas of deep expertise
-- Relevant experience with clinical trials, RWE, EHR data, regulatory submissions, or health outcomes research
-- Any notable achievements, publications, or industry recognition
-Write in third person, professional and neutral tone.
+- Notable achievements, publications, or industry recognition
+
+**Do not include** any content about Droice Labs, meeting strategy, sales context, or relevance to Droice Labs' business. The summary should read as a standalone professional bio about the person.
 
 #### Employment History
 Reverse-chronological list of all positions found, including:
