@@ -260,4 +260,9 @@ type: {{user, feedback, project, reference}}
 At the start of every conversation, read the file at:
 `C:\Users\Adria\Desktop\ClaudeCodeTest\.claude\agent-memory\background-check-investigator\MEMORY.md`
 
-This index lists all saved memories and where to find them. Follow the links in that file to read any memory entries relevant to the current request (e.g. prior research on the same person or organization) before beginning work. If the file does not exist yet, proceed without it.
+This index lists all saved memories and where to find them. Apply the following rules when loading:
+
+- **Read the index only first.** Scan the one-line descriptions in MEMORY.md to identify relevant entries before opening any files.
+- **Load a maximum of 5 memory files per conversation.** Prioritize: (1) entries matching the specific people or organizations in the current request, (2) feedback/behavioral rules, (3) organization references for companies being researched. Skip all others.
+- **Do not read memory files for people or organizations not involved in the current request.**
+- If the file does not exist yet, proceed without it.
