@@ -62,20 +62,46 @@ Companies flagged in Column G of the master list as large portfolio require stri
 
 If you encounter any OTHER company during processing that has more than 10 wound care products, apply these same large portfolio rules automatically and flag it in the Notes column.
 
+## WOUND-CARE-ADJACENT CONDITIONS
+
+Many companies in this space develop therapies for inflammatory skin conditions that involve chronic wounds or tissue damage. These are wound-care-adjacent and MUST be captured — do NOT dismiss them as "no wound care products." Specifically:
+
+### Conditions to Always Include
+- **Hidradenitis Suppurativa (HS)** — chronic inflammatory skin condition causing painful abscesses, tunnels, and non-healing wounds. Always include HS pipeline products.
+- **Epidermolysis Bullosa (EB)** — genetic skin fragility causing chronic wounds. Always include EB therapies.
+- **Pyoderma Gangrenosum (PG)** — inflammatory condition causing painful skin ulcers. Always include PG therapies.
+- **Calciphylaxis** — causes ischemic skin necrosis and non-healing ulcers. Always include.
+- **Chronic Limb-Threatening Ischemia (CLTI)** — causes non-healing wounds due to poor perfusion. Always include.
+
+### Conditions to Exclude (Not Wound Care)
+- Atopic dermatitis (AD) — unless the product also targets wound healing specifically
+- Psoriasis — unless the product also targets wound healing specifically
+- Alopecia — not wound care
+- Asthma, COPD, IBD, rheumatoid arthritis — not wound care
+- Oncology — not wound care
+- Thyroid eye disease — not wound care
+
+### Classification Rules for Adjacent Products
+- Product Category = "Other" for systemic drugs (oral, injectable) targeting HS/PG/EB
+- Product Category = "Biologic" for cell therapies, gene therapies, or biologic drugs targeting HS/PG/EB
+- Always check the company's **/pipeline/** page directly — homepages often undersell the pipeline
+- If a company's homepage says "immunology" or "inflammation" with no wound care mention, still fetch the pipeline page to check for HS, EB, or PG indications before concluding "no wound care products"
+
 ## WORKFLOW PER COMPANY
 
 1. Read the company's URL from the master list. Verify it per the URL VERIFICATION rules above.
 2. Fetch the company homepage. Scan for links to Products, Portfolio, Pipeline, R&D, Technology, Regulatory, or Science pages.
 3. Fetch only the most relevant 2-3 subpages (products page, pipeline page, regulatory/about page). Do NOT crawl the entire site.
-4. For each wound care product found:
+4. **CRITICAL: Always fetch the pipeline page** even if the homepage does not mention wound care. Many immunology/dermatology companies have HS, EB, or PG programs that only appear on pipeline pages.
+5. For each wound care or wound-care-adjacent product found:
    a. Determine if it is on the market or in the pipeline
    b. Identify the product category
    c. For marketed products: look for regulatory pathway mentions (361, 510(k), PMA, BLA, De Novo) and any clearance/approval numbers
    d. For pipeline products: identify the development stage
    e. Check if the company mentions active clinical trials for the product and classify as Pre-Market or Post-Market Evidence Gen
    f. Record the source URL of the page where you found the information
-5. If the company does not develop its own wound care products, classify it as Distributor, Research Group, or Service Provider. Create one row with Product Name = "N/A" and a note explaining the classification.
-6. If the website is down, paywalled, or uninformative, create one row with Notes = "Website inaccessible or limited info — manual review needed"
+6. If the company does not develop wound care or wound-care-adjacent products (per the conditions lists above), classify it as Distributor, Research Group, or Service Provider. Create one row with Product Name = "N/A" and a note explaining the classification.
+7. If the website is down, paywalled, or uninformative, create one row with Notes = "Website inaccessible or limited info — manual review needed"
 
 ## PARALLEL PROCESSING
 
@@ -117,6 +143,19 @@ After all sub-agents complete for a batch, compile results into the batch CSV fi
 ## DUPLICATE HANDLING
 
 If a company appears in multiple batches (e.g., large portfolio companies listed in both a standard batch and the large portfolio batch), process it only once in the batch where it has the Large Portfolio flag. In the other batch, add a single row with a note: "Processed in Batch [N]".
+
+## POST-SCAN QUALITY CHECKS
+
+After completing all batches, run an automated quality check on the master CSV to flag:
+
+1. **Missed HS/EB/PG pipelines**: Any company listed as "N/A" with notes mentioning "immunology", "inflammation", "autoimmune", or "dermatology" — re-scan their pipeline page to verify no HS/EB/PG programs were missed.
+2. **Unknown pathways on marketed products**: Any row with Market Status = "On Market" and Approval Pathway = "Unknown" — attempt one additional FDA database or web search to resolve.
+3. **Inaccessible websites**: Any row with "inaccessible" or "manual review" in Notes — attempt a web search for "[Company Name] wound care products" as a fallback.
+4. **FDA enforcement actions**: Flag any company with known FDA warning letters, enforcement actions, or product recalls in Notes. These affect commercial viability.
+5. **Discontinued products**: For companies with only Discontinued products, check if they have a replacement product or updated pipeline.
+6. **Stale "no products" classifications**: Companies classified as having no products should have their pipeline pages re-fetched directly (not just the homepage) before finalizing.
+
+Report quality check findings as a summary table after the final CSV is saved.
 
 ## ERROR HANDLING
 
